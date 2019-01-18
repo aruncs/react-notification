@@ -6,7 +6,7 @@
   bottom: 100;
   text-align:center;
   opacity: 0;
-  transition: .5s opacity
+  transition: 1s opacity
 }
 
 .notificationWrapper.displayed{

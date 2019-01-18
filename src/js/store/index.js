@@ -5,23 +5,23 @@ const initialState = {
   notifications : [{
     "key" : 1,
     "text" : "Hello!!! How are you?",
-    "time" : 2000
+    "duration" : 2000
   },{
     "key" : 2,
-    "text" : "Document created successfully.... sknvlksnvknsln ...sjabnvknasnvkns...sfnjksan cvkjasnsac aslc",
-    "time" : 1000
+    "text" : "Document created successfully..",
+    "duration" : 0
   },{
     "key" : 3,
     "text" : "Deletion of doc is not possible",
-    "time" : 2000
+    "duration" : 2000
   },{
     "key" : 4,
     "text" : "Balance updated",
-    "time" : 4000
+    "duration" : 4000
   },{
     "key" : 5,
     "text" : "User created",
-    "time" : 2000
+    "duration" : 2000
   }]
 }
 
