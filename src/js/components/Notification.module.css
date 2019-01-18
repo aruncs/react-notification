@@ -1,0 +1,14 @@
+
+.notificationWrapper{
+  position: absolute;
+  min-height: 50;
+  width: 100%;
+  bottom: 100;
+  text-align:center;
+  opacity: 0;
+  transition: 1s opacity
+}
+
+.notificationWrapper.displayed{
+  opacity: 1
+}

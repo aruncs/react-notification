@@ -1,0 +1,41 @@
+
+.notificationWrapper{
+  position: absolute;
+  min-height: 50px;
+  width: 100%;
+  bottom: 100;
+  text-align:center;
+  opacity: 0;
+  transition: .5s opacity
+}
+
+.notificationWrapper.displayed{
+  opacity: 1
+}
+
+.invisible{
+  display: none;
+}
+
+.closeButton{
+  text-align : center;
+  cursor:pointer;
+  float: right;
+  font-size: 11px;
+  font-family: "helvetica";
+  color: "tray";
+}
+
+.notification {
+  text-align : center;
+  background-color: #383838;
+  width : fit-content;
+  height: 100%;
+  min-width: 250px;
+  max-width: 500px;
+  display:inline-block;
+  border-radius: 5px;
+  color: #F0F0F0;
+  padding:10;
+  box-shadow: 0px 0px 24px -1px rgba(56, 56, 56, 1);
+}
