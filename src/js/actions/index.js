@@ -1,13 +1,15 @@
+import constants from "../constants"
+
 function addNotification(payload){
   return {
-    "type" : "ADD_NOTIFICATION",
+    "type" : constants.actions.addNotification,
     payload
   }
 }
 
 function removeNotification(){
   return {
-    "type" : "REMOVE_NOTIFICATION"
+    "type" : constants.actions.removeNotification
   }
 }
 

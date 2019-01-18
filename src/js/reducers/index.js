@@ -1,11 +1,11 @@
+import constants from "../constants"
+
 function reducer(state,action){
     switch (action.type) {
-      case "ADD_NOTIFICATION":
+      case constants.actions.addNotification:
         return Object.assign({},state,{"notifications" : state.notifications.concat(action.payload)})
-        break;
-      case "REMOVE_NOTIFICATION":
+      case constants.actions.removeNotification:
         return Object.assign({},state,{"notifications" : state.notifications.slice().splice(1)})
-        break;
       default:
         return state
     }

@@ -5,15 +5,13 @@ import {connect} from "react-redux"
 import {removeNotification, addNotification} from "../actions"
 
 const mapStateToProps = (state) => {
-  return {notifications : state.notifications}
+  return {notifications : state && state.notifications}
 }
 
 class Notification extends React.Component{
 
   constructor(){
     super()
-
-    this.shouldRemoveNotification = false;
 
     this.state = {
       open : false
@@ -22,6 +20,7 @@ class Notification extends React.Component{
 
     this._removeCurrentNotification = this._removeCurrentNotification.bind(this)
     this.handleCloseButtonClick = this.handleCloseButtonClick.bind(this)
+    this.addNotification = this.addNotification.bind(this)
   }
 
   addNotification(notification){
@@ -33,13 +32,13 @@ class Notification extends React.Component{
   }
 
   _removeCurrentNotification(){
-      if(this.props.notifications.length){
+      if(this.props.notifications && this.props.notifications.length){
         this.props.dispatch(removeNotification())
       }
   }
   openNotification(){
     this.setState({ open: true })
-    if(this.props.notifications[0].duration){
+    if(this.props.notifications && this.props.notifications[0].duration){
       setTimeout(()=>{
         this.closeNotification()
       }, this.props.notifications[0].duration)
@@ -52,12 +51,12 @@ class Notification extends React.Component{
     }, 1000)
   }
   componentDidMount(){
-    if(this.props.notifications.length){
+    if(this.props.notifications && this.props.notifications.length){
       this.openNotification()
     }
   }
   componentDidUpdate(prevProps, prevState){
-    if(this.props.notifications[0] !== prevProps.notifications[0]) {
+    if(this.props.notifications && this.props.notifications[0] !== prevProps.notifications[0]) {
     	this.openNotification()
     }
   }
@@ -69,7 +68,7 @@ class Notification extends React.Component{
 
     //Close button should be invisible if there is a non zero time duration specified
     var closeButtonClassName = "closeButton"
-    closeButtonClassName += this.props.notifications.length && this.props.notifications[0].duration ? " invisible" : ""
+    closeButtonClassName += this.props.notifications && this.props.notifications.length && this.props.notifications[0].duration ? " invisible" : ""
 
     return(
       <div className={notificationWrapperclassName} ref={this._notificationWrapper}>
@@ -79,13 +78,12 @@ class Notification extends React.Component{
               x
             </div>
             <div>
-              {this.props.notifications.length !== 0 && this.props.notifications[0].text}
+              {this.props.notifications && this.props.notifications.length !== 0 && this.props.notifications[0].text}
             </div>
         </div>
       </div>
     )
   }
 }
-
 
 export default connect(mapStateToProps)(Notification)
