@@ -57,7 +57,7 @@ class Notification extends React.Component{
     }
   }
   componentDidUpdate(prevProps, prevState){
-    if(this.props.notifications && this.props.notifications[0] !== prevProps.notifications[0]) {
+    if(this.props.notifications && this.props.notifications.length && this.props.notifications[0] !== prevProps.notifications[0]) {
     	this.openNotification()
     }
   }
