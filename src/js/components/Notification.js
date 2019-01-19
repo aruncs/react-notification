@@ -16,6 +16,7 @@ class Notification extends React.Component{
     this.state = {
       open : false
     }
+    //TODO: Remove this..only for testing
     window.notification = this;
     this._notificationWrapper = React.createRef()
 
