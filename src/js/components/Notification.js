@@ -16,6 +16,7 @@ class Notification extends React.Component{
     this.state = {
       open : false
     }
+    window.notification = this;
     this._notificationWrapper = React.createRef()
 
     this._removeCurrentNotification = this._removeCurrentNotification.bind(this)
@@ -38,7 +39,7 @@ class Notification extends React.Component{
   }
   openNotification(){
     this.setState({ open: true })
-    if(this.props.notifications && this.props.notifications[0].duration){
+    if(this.props.notifications && this.props.notifications.length && this.props.notifications[0].duration){
       setTimeout(()=>{
         this.closeNotification()
       }, this.props.notifications[0].duration)
