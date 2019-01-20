@@ -16,10 +16,6 @@ class Notification extends React.Component{
     this.state = {
       open : false
     }
-    //TODO: Remove this..only for testing
-    window.notification = this;
-
-    this._notificationWrapper = React.createRef()
 
     this._removeCurrentNotification = this._removeCurrentNotification.bind(this)
     this.handleCloseButtonClick = this.handleCloseButtonClick.bind(this)
@@ -74,7 +70,7 @@ class Notification extends React.Component{
     closeButtonClassName += this.props.notifications && this.props.notifications.length && this.props.notifications[0].duration ? " invisible" : ""
 
     return(
-      <div className={notificationWrapperclassName} ref={this._notificationWrapper}>
+      <div className={notificationWrapperclassName}>
         <div className="notification">
             <div className={closeButtonClassName}
               onClick={this.handleCloseButtonClick}>
