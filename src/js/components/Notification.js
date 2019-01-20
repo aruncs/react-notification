@@ -18,6 +18,7 @@ class Notification extends React.Component{
     }
     //TODO: Remove this..only for testing
     window.notification = this;
+
     this._notificationWrapper = React.createRef()
 
     this._removeCurrentNotification = this._removeCurrentNotification.bind(this)

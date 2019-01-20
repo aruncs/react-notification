@@ -1,6 +1,7 @@
 import constants from "../constants"
 
 function reducer(state,action){
+    
     switch (action.type) {
       case constants.actions.addNotification:
         return Object.assign({},state,{"notifications" : state.notifications.concat(action.payload)})
