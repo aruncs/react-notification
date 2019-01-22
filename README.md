@@ -11,4 +11,4 @@ React toast notification component
   1. I have already added few notifications while creating the store. extra notifications can be added through the form.
 
 #Demo
-![Demo GIF](Notification Final GIF.gif)
+![Demo GIF](NotificationFinalGIF.gif)
